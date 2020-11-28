@@ -1,0 +1,43 @@
+3 1
+set 1 2
+get 1
+get 2
+
+2
+-1
+
+
+8 4
+set 4 2
+set 2 7
+get 2
+set 1 8
+set 5 9
+set 6 15
+get 4
+get 5
+
+7
+-1
+9
+
+
+12 5
+set 11 1
+set 12 2
+set 13 3
+set 14 4
+set 15 5
+set 13 13
+set 16 6
+get 2
+get 15
+get 13
+get 11
+get 3
+
+-1
+5
+13
+-1
+-1
