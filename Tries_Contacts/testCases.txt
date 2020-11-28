@@ -1,0 +1,47 @@
+4
+add hack
+add hackerrank
+find hac
+find hak
+
+2
+0
+
+8
+add hack
+add ha
+add cat
+add cry
+find hac
+find h
+find c
+find caller
+
+1
+2
+2
+0
+
+13
+add hack
+add hackerrank
+add hen
+add horse
+add hope
+add call
+add cat
+add cry
+find hac
+find ho
+find h
+find c
+find caller
+
+2
+2
+5
+3
+0
+
+
+
