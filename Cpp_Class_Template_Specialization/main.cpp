@@ -4,8 +4,8 @@ enum class Fruit { apple, orange, pear };
 enum class Color { red, green, orange };
 
 template <typename T> struct Traits;
-
-// include directive put here since code above is locked in HackerRank online editor
+// Code above this line is locked in HackerRank online editor
+// Challenge details: https://www.hackerrank.com/challenges/cpp-class-template-specialization/problem
 #include <map>
 
 map<int, string> fruitNames{ {0, "apple"}, {1, "orange"}, {2, "pear"} };
@@ -23,7 +23,7 @@ template <> struct Traits<Fruit> {
     }
 };
 
-// Code below locked in online editor
+// Code below this line is locked in HackerRank online editor
 int main()
 {
     int t = 0; std::cin >> t;
