@@ -4,7 +4,8 @@ enum class Fruit { apple, orange, pear };
 enum class Color { red, green, orange };
 
 template <typename T> struct Traits;
-// Code above this line is locked in HackerRank online editor
+// Code above this line is locked in the HackerRank online editor
+
 // Challenge details: https://www.hackerrank.com/challenges/cpp-class-template-specialization/problem
 #include <map>
 
@@ -23,7 +24,7 @@ template <> struct Traits<Fruit> {
     }
 };
 
-// Code below this line is locked in HackerRank online editor
+// Code below this line is locked in the HackerRank online editor
 int main()
 {
     int t = 0; std::cin >> t;
