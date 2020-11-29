@@ -12,10 +12,11 @@ vector<string> split_string(string);
 
 // Challenge details: https://www.hackerrank.com/challenges/insertion-sort/problem
 // This solution use a BIT/Fenwick tree to count inversions to calculate the number of shifts an insertion sort performs when sorting an array
-// Time complexity for BIT::update and BIT::sum is O(log m) where m = max input array value
+// Time complexity for BIT::update and BIT::sum is O(log m) where m = max input array element + 1
 // Time complexity for BIT::countInversions is O(n log m) where n = size of input array
 // Space complexity for BIT::bitArray is O(m)
 // For details on BIT and counting inversions see https://www.youtube.com/watch?v=kPaJfAUwViY&feature=youtu.be&t=1485
+// NB! Change the type of the variable result in main to uint64_t, else some of the test cases will fail.
 
 class BIT {
     uint32_t size;
@@ -57,7 +58,6 @@ public:
         }
         return sumInversion;
     }
-
 };
 
 // Complete the insertionSort function below.
@@ -66,13 +66,12 @@ uint64_t insertionSort(const vector<int> &arr) {
     for (const auto& v : arr) {
         if (maxValue < v) { maxValue = v; }
     }
-    const BIT bit(maxValue + 1);
-    const auto inversionsCount = bit.countInversions(arr);
-    cout << inversionsCount << "\n";
+    BIT bit(maxValue + 1);
+    auto inversionsCount = bit.countInversions(arr);
     return inversionsCount;
 }
 
-// Code below this line is from challenge template, though modified to output to terminal
+// Code below this line is from challenge template, though modified to output to terminal and changed type of result to uint64_t
 int main()
 {
     int t;
@@ -101,7 +100,6 @@ int main()
 
         cout << result << "\n";
     }
-
     return 0;
 }
 
