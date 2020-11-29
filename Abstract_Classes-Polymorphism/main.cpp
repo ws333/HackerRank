@@ -17,7 +17,6 @@ struct Node {
 };
 
 class Cache {
-
 protected:
     map<int, Node*> mp; //map the key to the node in the linked list
     int cp;  //capacity
@@ -25,14 +24,13 @@ protected:
     Node* head; // double linked list head pointer
     virtual void set(int, int) = 0; //set function
     virtual int get(int) = 0; //get function
-
 };
 
-// Code above this line is locked in HackerRank online editor
+// Code above this line is locked in the HackerRank online editor
 
 // Challenge details: https://www.hackerrank.com/challenges/abstract-classes-polymorphism/problem
-// This challenge is somewhat contrived since a cache miss doesn't retrieve fresh data.
-// Cleanup with virtual dstor, but no copy or move cstors/assignment operators defined since not needed for this challenge.
+// Note that this challenge is somewhat contrived since a cache miss doesn't retrieve fresh data.
+// Cleanup with virtual dstor, but no copy or move cstors/assignment operators defined since they're not needed for this challenge.
 
 class LRUCache : public Cache {
 public:
@@ -146,7 +144,7 @@ void LRUCache::updateLRU_byTail(const int key, const int value)
     head->value = value;
 }
 
-// Code below this line is locked in HackerRank online editor
+// Code below this line is locked in the HackerRank online editor
 int main() {
     int n, capacity, i;
     cin >> n >> capacity;
