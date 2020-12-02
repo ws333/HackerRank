@@ -11,7 +11,7 @@ using std::cout;
 // The object que of type deque<int> is used to store the indexes of useful elements in every window
 // i.e. the greatest number in current window is always in front,
 // maintaining a non increasing order of values from front to back
-// Time complexity of printKMax is O(n + k)
+// Time complexity of printKMax is O(n+k)
 // Space complexity of printKMax is O(k)
 
 void printKMax(std::vector<int> arr, int n, int k) {
@@ -43,8 +43,7 @@ void printKMax(std::vector<int> arr, int n, int k) {
     }
 
     // Output max element from last window
-    if (k < n)
-    {
+    if (k < n) {
         int max{};
         for (auto i {n - k}; i < n; ++i) {
             if (max < arr.at(i)) { max = arr.at(i); }
@@ -54,7 +53,7 @@ void printKMax(std::vector<int> arr, int n, int k) {
     cout << "\n";
 }
 
-// Modified to use scanf instead of cin (scanf_s not supported here) to optimize reading of input data.
+// Modified to use scanf instead of cin (scanf_s seems not to be supported on the online compiler) to optimize reading of input data.
 int main() {
     int t;
     scanf("%d", &t);
