@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <numeric>  
+#include <algorithm>
 
 using std::cout;
 using std::cin;
@@ -11,26 +13,23 @@ string ltrim(const string&);
 string rtrim(const string&);
 vector<string> split(const string&);
 
+// Challenge details: https://www.hackerrank.com/challenges/minimum-swaps-2/problem
+
 class ContainsBalancedSumCheck {
     const vector<int>& arr;
-    long total{};
-
-    void generateTotal() {
-        for (int i{}; i < arr.size(); ++i) {
-            total += arr.at(i);
-        }
-    }
+    long arrSum{};
 
 public:
     ContainsBalancedSumCheck(const vector<int>& arr)
-        : arr{arr} {};
+        : arr{arr} {
+        arrSum = std::accumulate(arr.begin(), arr.end(), 0);
+    };
 
     bool checkContainsBalancedSum() {
         if (arr.size() < 2) { return true; }
         long leftSum {0};
-        generateTotal();
-        for (int i {0}; i < arr.size() - 1; ++i) {
-            if ((leftSum) == (total - leftSum - arr.at(i))) {
+        for (size_t i {0}; i < arr.size() - 1; ++i) {
+            if ((leftSum) == (arrSum - leftSum - arr.at(i))) {
                 return true;
             }
             leftSum += arr.at(i);
@@ -45,7 +44,7 @@ string balancedSums(vector<int> arr) {
     return testArray.checkContainsBalancedSum() ? "YES" : "NO";
 }
 
-// Code below this line is from challenge template, though modified to ouput to terminal
+// Code below this line is from challenge template, though modified to output to terminal
 int main()
 {
     string T_temp;
